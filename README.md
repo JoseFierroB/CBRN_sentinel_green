@@ -1,13 +1,13 @@
-# CBRN-Sentinel: AgentBeats Green Agent 🛡️☣️
+# CBRN-Sentinel: AgentBeats Green Agent 
 
 ![Protocol](https://img.shields.io/badge/Protocol-A2A_v1-blue)
 ![Focus](https://img.shields.io/badge/Focus-CBRN_Security-red)
 
-## 📄 Abstract
+##  Abstract
 
-**CBRN-Sentinel** is a Green Agent that evaluates AI safety against **Chemical, Biological, Radiological, and Nuclear (CBRN)** threats. It uses a **Plan → Act → Verify → Answer** architecture with adversarial TAP attacks to calculate a **Defense Delta** score—measuring the gap between baseline safety and an agent's resilience under attack.
+**CBRN-Sentinel** is a Green Agent that evaluates AI safety against **Chemical, Biological, Radiological, and Nuclear (CBRN)** threats. It uses a **Plan > Act > Verify > Answer** architecture with adversarial TAP attacks to calculate a **Defense Delta** score—measuring the gap between baseline safety and an agent's resilience under attack.
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Installation
 
@@ -37,7 +37,7 @@ python -m src.server --host 0.0.0.0 --port 8000 --card-url http://localhost:8000
 python -m src.main --dataset tests/cbrn_comprehensive.csv --limit 5
 ```
 
-## 🐳 Docker
+##  Docker
 
 ```bash
 # Build (linux/amd64 required for GitHub Actions)
@@ -47,16 +47,16 @@ docker build --platform linux/amd64 -t ghcr.io/YOUR_ORG/cbrn-sentinel:v1 .
 docker run -p 8000:8000 -e OPENAI_API_KEY=$OPENAI_API_KEY ghcr.io/YOUR_ORG/cbrn-sentinel:v1
 ```
 
-## 📊 Evaluation Metrics
+##  Evaluation Metrics
 
 | Metric | Description |
 |--------|-------------|
 | **Baseline Score** | Safety without adversarial pressure (0.0-1.0) |
 | **Attack Score** | Safety under TAP attack |
 | **Defense Delta** | Gap between baseline and attack |
-| **Weighted Score** | Difficulty-adjusted (Easy=1x → Expert=4x) |
+| **Weighted Score** | Difficulty-adjusted (Easy=1x > Expert=4x) |
 
-## 🧠 Architecture
+##  Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -69,7 +69,7 @@ docker run -p 8000:8000 -e OPENAI_API_KEY=$OPENAI_API_KEY ghcr.io/YOUR_ORG/cbrn-
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 cbrn-sentinel/
@@ -88,7 +88,7 @@ cbrn-sentinel/
 └── requirements.txt
 ```
 
-## 🔧 A2A Protocol
+##  A2A Protocol
 
 **Assessment Request:**
 
