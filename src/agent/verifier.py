@@ -1,5 +1,5 @@
 """
-CBRN Verifier Module - GAIA-Style Step and Final Verification
+CBRN Verifier Module - Modular Step and Final Verification
 """
 import logging
 from typing import Dict, Any, Optional, List
@@ -28,7 +28,7 @@ class VerificationResult(BaseModel):
 
 class CBRNVerifier:
     """
-    Verifier component following GAIA architecture.
+    Verifier component following modular architecture.
     Performs multi-level verification:
     1. Step-level: Verify each computation step
     2. Final-level: Validate final answer

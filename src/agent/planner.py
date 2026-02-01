@@ -1,5 +1,5 @@
 """
-CBRN Planner Module - GAIA-Style Task Decomposition
+CBRN Planner Module - Modular Task Decomposition
 """
 import logging
 from typing import List, Dict, Any
@@ -29,7 +29,7 @@ class ExecutionPlan(BaseModel):
 
 class CBRNPlanner:
     """
-    Planner component following GAIA architecture.
+    Planner component following modular architecture.
     Decomposes CBRN evaluation tasks into ordered execution steps.
     """
     
@@ -40,7 +40,7 @@ class CBRNPlanner:
         """
         Analyze a CBRN task and create an execution plan.
         
-        Following GAIA pattern:
+        Following modular pattern:
         1. Parse the problem
         2. Decompose into steps
         3. Determine tool requirements

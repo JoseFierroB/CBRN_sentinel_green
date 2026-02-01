@@ -1,5 +1,5 @@
 """
-CBRN-Sentinel Main Entry Point (V2 - GAIA Style)
+CBRN-Sentinel Main Entry Point (V2 - modular Style)
 Follows Plan → Act → Verify → Answer pattern
 """
 import asyncio
@@ -11,7 +11,7 @@ import sys
 import datetime
 from dotenv import load_dotenv
 
-# Import new GAIA-style components
+# Import new modular components
 from src.agent import CBRNAgent, CBRNPlanner, CBRNVerifier
 from src.modules.tap import TapEngine
 from src.modules.judging import LlamaGuardJudge
@@ -57,7 +57,7 @@ def calculate_weighted_score(results: list) -> float:
 
 
 def save_report(results: list, benchmark_name: str, total_usage: dict):
-    """Generates a Markdown summary following GAIA style with weighted scoring."""
+    """Generates a Markdown summary following modular with weighted scoring."""
     os.makedirs("reports", exist_ok=True)
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     safe_name = benchmark_name.replace("/", "_").replace("\\", "_")
@@ -85,13 +85,13 @@ def save_report(results: list, benchmark_name: str, total_usage: dict):
         diff = r.get('difficulty', 'medium')
         diff_counts[diff] = diff_counts.get(diff, 0) + 1
     
-    md = f"""# CBRN-Sentinel Assessment Report (GAIA Style)
+    md = f"""# CBRN-Sentinel Assessment Report (modular Style)
 **Date**: {datetime.datetime.now()}
 **Benchmark**: `{benchmark_name}`
 **Cost**: ${total_cost:.4f} (Input: {total_usage['prompt_tokens']}, Output: {total_usage['completion_tokens']})
 
 ## Architecture
-Following GAIA pattern: **Plan → Act → Verify → Answer**
+Following modular pattern: **Plan → Act → Verify → Answer**
 
 ## Aggregate Metrics
 | Metric | Value | Description |
@@ -141,7 +141,7 @@ Following GAIA pattern: **Plan → Act → Verify → Answer**
 
 
 async def main():
-    parser = argparse.ArgumentParser(description="CBRN-Sentinel (GAIA Style)")
+    parser = argparse.ArgumentParser(description="CBRN-Sentinel (modular Style)")
     parser.add_argument("--key", help="API Key (optional if in .env)", default=None)
     parser.add_argument("--provider", help="LLM Provider", default="openai")
     parser.add_argument("--model", help="Model for TAP attacks", default="gpt-5-nano")
@@ -184,8 +184,8 @@ async def main():
     else:
         judge_interface = llm_interface
 
-    # 3. Create GAIA-Style Components
-    logger.info("=== GAIA-Style Architecture ===")
+    # 3. Create Modular Components
+    logger.info("=== Modular Architecture ===")
     
     # Planner
     planner = CBRNPlanner(llm_interface=llm_interface)
@@ -237,7 +237,7 @@ async def main():
         logger.critical("No items loaded. Exiting.")
         sys.exit(1)
 
-    # 5. Execute Tasks (GAIA Style)
+    # 5. Execute Tasks (modular Style)
     logger.info("=== Starting Evaluation ===")
     results = []
     total_usage = {"prompt_tokens": 0, "completion_tokens": 0}
@@ -266,7 +266,7 @@ async def main():
     
     # 7. Output JSON Summary
     summary = {
-        "architecture": "GAIA-Style (Plan → Act → Verify → Answer)",
+        "architecture": "Modular (Plan → Act → Verify → Answer)",
         "tasks_completed": len(results),
         "avg_baseline": sum(r['baseline_score'] for r in results) / len(results) if results else 0,
         "avg_attack": sum(r['attack_score'] for r in results) / len(results) if results else 0,

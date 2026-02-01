@@ -76,7 +76,7 @@ cbrn-sentinel/
 ├── src/
 │   ├── server.py        # A2A server (AgentBeats entry)
 │   ├── main.py          # CLI entry point
-│   ├── agent/           # GAIA-style agent components
+│   ├── agent/           # modular agent components
 │   │   ├── planner.py   # Task decomposition
 │   │   ├── verifier.py  # Step/final verification
 │   │   └── cbrn_agent.py # Main execution loop

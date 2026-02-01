@@ -18,7 +18,7 @@ try:
 except ImportError:
     raise ImportError("FastAPI and uvicorn required. Run: pip install fastapi uvicorn")
 
-# Import GAIA-style components
+# Import modular components
 from src.agent import CBRNAgent, CBRNPlanner, CBRNVerifier
 from src.modules.tap import TapEngine
 from src.modules.judging import LlamaGuardJudge

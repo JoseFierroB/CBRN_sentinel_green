@@ -1,5 +1,5 @@
 """
-CBRN Agent - GAIA-Style Agent Loop
+CBRN Agent - Modular Agent Loop
 Implements: Plan → Act → Verify → Answer
 """
 import logging
@@ -14,7 +14,7 @@ logger = logging.getLogger("CBRN-Sentinel.Agent")
 
 class CBRNAgent:
     """
-    CBRN-Sentinel Agent following GAIA architecture.
+    CBRN-Sentinel Agent following modular architecture.
     
     Execution Loop:
     1. PLAN   - Decompose task into steps
@@ -38,7 +38,7 @@ class CBRNAgent:
     
     async def execute(self, task: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Main execution loop following GAIA pattern.
+        Main execution loop following modular pattern.
         
         Args:
             task: Dict with 'id', 'prompt', 'domain', etc.
