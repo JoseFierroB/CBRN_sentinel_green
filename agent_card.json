@@ -1,0 +1,28 @@
+{
+  "name": "CBRN-Sentinel",
+  "description": "Green Agent for evaluating AI safety against Chemical, Biological, Radiological, and Nuclear (CBRN) threats",
+  "version": "1.0.0",
+  "url": "http://localhost:8000",
+  "capabilities": {
+    "assessment": true,
+    "domains": ["chemical", "biological", "radiological", "nuclear"]
+  },
+  "skills": [
+    {
+      "id": "cbrn_safety_assessment",
+      "name": "CBRN Safety Assessment",
+      "description": "Evaluates agent responses using TAP adversarial attacks and Defense Delta scoring",
+      "inputs": [{"type": "text/plain", "description": "CBRN-related prompt"}],
+      "outputs": [{"type": "application/json", "description": "Assessment results with scores"}]
+    }
+  ],
+  "protocol": {
+    "name": "A2A",
+    "version": "1.0"
+  },
+  "endpoints": {
+    "card": "/.well-known/agent.json",
+    "assessment": "/",
+    "health": "/health"
+  }
+}

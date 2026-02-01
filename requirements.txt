@@ -1,0 +1,20 @@
+# Core
+fastapi
+uvicorn
+python-multipart
+requests
+python-dotenv
+pydantic
+datasets
+fsspec
+
+# LLM Drivers
+openai
+google-genai
+
+# Scientific / CBRN Tools
+rdkit
+biopython
+pubchempy
+numpy
+pandas
