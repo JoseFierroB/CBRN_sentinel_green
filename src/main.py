@@ -61,7 +61,9 @@ def save_report(results: list, benchmark_name: str, total_usage: dict):
     os.makedirs("reports", exist_ok=True)
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     safe_name = benchmark_name.replace("/", "_").replace("\\", "_")
-    filename = f"reports/summary_{safe_name}_{timestamp}.md"
+    filename_md = f"reports/summary_{safe_name}_{timestamp}.md"
+    filename_json = f"reports/result_{safe_name}_{timestamp}.json"
+    latest_json = "reports/latest_results.json"
     
     # Cost Calculation (GPT-4o tier)
     input_cost = (total_usage["prompt_tokens"] / 1_000_000) * 2.50
